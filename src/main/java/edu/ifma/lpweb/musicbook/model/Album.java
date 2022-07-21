@@ -4,6 +4,8 @@ import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 import org.hibernate.validator.constraints.Length;
 
+import lombok.EqualsAndHashCode;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -17,18 +19,42 @@ public class Album implements BaseModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @EqualsAndHashCode.Include
     private Integer id;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "artista_id")
     private Artista artista;
 
-    @NotNull(message = "Não é possível ter um album sem um nome definido")
+    /* validações */
+    @NotNull(message = "Não é possível ter um album sem um nome definido") 
     @NotEmpty(message = "É necessário definir um nome para o album")
     @Column(name = "nome")
     private String nome;
+
     @Column(name = "ano")
     private Integer ano;
+    
+    @Override
+    public void setId(Integer id) {
+        this.id = id;
+    }
+    
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    
+    public Integer getAno() {
+        return ano;
+    }
+
+    public void setAno(Integer ano) {
+        this.ano = ano;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -42,4 +68,6 @@ public class Album implements BaseModel {
     public int hashCode() {
         return Objects.hash(id, nome, ano);
     }
+
+   
 }

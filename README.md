@@ -15,3 +15,8 @@ For further reference, please consider the following sections:
 * [Flyway Migration](https://docs.spring.io/spring-boot/docs/2.3.0.M1/reference/htmlsingle/#howto-execute-flyway-database-migrations-on-startup)
 * [Spring Data JPA](https://docs.spring.io/spring-boot/docs/2.3.0.M1/reference/htmlsingle/#boot-features-jpa-and-spring-data)
 * [Spring Boot DevTools](https://docs.spring.io/spring-boot/docs/2.3.0.M1/reference/htmlsingle/#using-boot-devtools)
+
+
+## Como rodar local
+
+.\mvnw.cmd spring-boot:run

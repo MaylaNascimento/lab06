@@ -35,4 +35,28 @@ public class Musica implements BaseModel {
     @Length(min = 3, max = 5, message = "Deve possuir duração de no minímo {min}")
     @Column(name = "duracao")
     private Integer duracao;
+
+    
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+
+    public Integer getDuracao() {
+        return duracao;
+    }
+
+    public void setDuracao(Integer duracao) {
+        this.duracao = duracao;
+    }
+
+    @Override
+    public void setId(Integer id) {
+        this.id = id;
+    }
 }

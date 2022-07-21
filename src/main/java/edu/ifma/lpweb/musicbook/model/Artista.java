@@ -37,6 +37,28 @@ public class Artista implements BaseModel {
     @Column(name = "nacionalidade")
     private String nacionalidade;
 
+        
+    @Override
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    
+    public String getNacionalidade() {
+        return nacionalidade;
+    }
+
+    public void setNacionalidade(String nacionalidade) {
+        this.nacionalidade = nacionalidade;
+    }
+
 
     @Override
     public boolean equals(Object o) {
